@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiscoBet - مرحباً بك في عالم الترفيه</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* الخطوط والألوان الأساسية */
+        :root {
+            --main-bg-color: #A7F0B4; /* أخضر فاتح للمبرمجين */
+            --header-bg-color: #2E8B57; /* أخضر داكن للشعار والأزرار */
+            --game-box-color: #FF6347; /* أحمر للخانات */
+            --text-color: #333;
+            --white-text: #FFF;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+            overflow-x: hidden; /* لمنع ظهور شريط التمرير الأفقي */
+        }
+
+        /* ----- شاشة التحميل (Splash Screen) ----- */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--header-bg-color); /* خلفية داكنة لشاشة التحميل */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1s ease-out; /* انتقال سلس عند الاختفاء */
+        }
+
+        #splash-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #money-animation {
+            width: 80vw; /* حجم الشاشة المتحركة */
+            max-width: 500px;
+            aspect-ratio: 16/9; /* نسبة عرض إلى ارتفاع مناسبة للفيديو */
+            object-fit: contain; /* التأكد من أن الفيديو يظهر بالكامل */
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ----- الواجهة الرئيسية (بعد التحميل) ----- */
+        #main-content {
+            opacity: 0; /* إخفاء المحتوى الرئيسي في البداية */
+            visibility: hidden;
+            transition: opacity 1s ease-in;
+        }
+
+        #main-content.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ----- شريط الرأس (Header) ----- */
+        .header {
+            background-color: var(--header-bg-color);
+            color: var(--white-text);
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .header .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header .auth-buttons button {
+            background-color: var(--main-bg-color); /* لون أخضر فاتح للأزرار */
+            color: var(--text-color);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 700;
+        }
+
+        .header .auth-buttons button:hover {
+            background-color: #8FD89A; /* لون أغمق قليلاً عند التمرير */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="splash-screen">
+        <img id="money-animation" src="https://i.imgur.com/G5yY1Fk.gif" alt="ماكينة عد النقود">
+        </div>
+
+    <div id="main-content">
+        <div class="header">
+            <div class="logo">DiscoBet</div>
+            <div class="auth-buttons">
+                <button>تسجيل الدخول</button>
+                <button>إنشاء حساب جديد</button>
+            </div>
+        </div>
+
+        ```<div class="games-container">
+            <div class="info-bar">
+                <div class="balance-info">الرصيد: 0.00 جنيه</div>
+                <div class="notification-icon">🔔</div>
+            </div>
+
+            <div class="games-grid">
+                </div>
+        </div>
+
+        <div class="bottom-nav">
+            <div class="nav-item active">
+                🏠
+                <span>الرئيسية</span>
+            </div>
+            <div class="nav-item">
+                🎁
+                <span>المكافآت</span>
+            </div>
+            <div class="nav-item">
+                👤
+                <span>حسابي</span>
+            </div>
+            <div class="nav-item">
+                💬
+                <span>محادثة</span>
+            </div>
+            <div class="nav-item">
+                ⚙️
+                <span>المزيد</span>
+            </div>
+        </div>
+
+    </div> <script>
+        // هذا الكود سيأتي في الجزء الثالث والأخير لتشغيل الحركة والتحويل
+        // وتوليد شبكة الـ 100 خانة
+    </script>
+</body>
+</html>
+
+<style>
+    /* شريط المعلومات داخل المحتوى الرئيسي */
+    .info-bar {
+        background-color: var(--header-bg-color);
+        color: var(--white-text);
+        padding: 10px 15px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* حاوية شبكة الألعاب */
+    .games-container {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* تصميم شبكة الألعاب (Grid) */
+    .games-grid {
+        display: grid;
+        /* تصميم للشبكة بـ 4 أعمدة على الشاشات الكبيرة و 3 أو 2 على الهواتف */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+        gap: 15px;
+        padding-bottom: 80px; /* مساحة للشريط السفلي */
+    }
+
+    /* تصميم خانة اللعبة الواحدة */
+    .game-box {
+        background-color: var(--game-box-color); /* اللون الأحمر الثابت */
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 5px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        overflow: hidden;
+    }
+
+    .game-box:hover {
+        transform: scale(1.03);
+    }
+
+    .game-image {
+        background-color: #f9f9f9; /* لون رمادي فاتح لمكان الصورة */
+        height: 100px; /* ارتفاع ثابت للصورة */
+        margin-bottom: 10px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--text-color);
+        font-weight: 700;
+        font-size: 16px;
+        /* مبدأ "صورة واحدة لكل خانة" سنضع لون أحمر هنا حسب طلبك */
+        background-color: var(--game-box-color);
+        border: 2px solid var(--white-text);
+    }
+
+    .game-index {
+        background-color: var(--header-bg-color);
+        color: var(--white-text);
+        padding: 5px;
+        border-radius: 5px;
+        font-weight: 700;
+        margin-top: 5px;
+    }
+
+
+    /* ----- شريط التنقل السفلي (Bottom Nav) ----- */
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--header-bg-color);
+        color: var(--white-text);
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 900;
+    }
+
+    .bottom-nav .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 12px;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
+
+    .bottom-nav .nav-item span {
+        margin-top: 3px;
+    }
+
+    .bottom-nav .nav-item.active,
+    .bottom-nav .nav-item:hover {
+        opacity: 1;
+    }
+</style><script>
+    // --------------------------------------------------------
+    // 1. توليد 100 خانة لعبة (Games Grid Generation)
+    // --------------------------------------------------------
+    function generateGamesGrid() {
+        const gridContainer = document.querySelector('.games-grid');
+        let htmlContent = '';
+
+        // إنشاء 100 خانة (من 1 إلى 100)
+        for (let i = 1; i <= 100; i++) {
+            // ملاحظة: تم إضافة خاصية 'data-game-id' لتسهيل ربط الروابط لاحقاً
+            htmlContent += `
+                <div class="game-box" data-game-id="${i}">
+                    <div class="game-image">
+                        صورة اللعبة
+                    </div>
+                    <div class="game-index">
+                        خانة رقم: ${i}
+                    </div>
+                </div>
+            `;
+        }
+
+        gridContainer.innerHTML = htmlContent;
+    }
+
+    // --------------------------------------------------------
+    // 2. إدارة شاشة التحميل والتحويل (Splash Screen Logic)
+    // --------------------------------------------------------
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const splashScreen = document.getElementById('splash-screen');
+        const mainContent = document.getElementById('main-content');
+        const DURATION = 10000; // 10 ثواني (10000 مللي ثانية)
+
+        // قم بتوليد الخانات فوراً عند تحميل الصفحة
+        generateGamesGrid();
+
+        // إخفاء شاشة التحميل وإظهار المحتوى الرئيسي بعد المدة المحددة
+        setTimeout(() => {
+            // إخفاء Splash Screen
+            splashScreen.classList.add('hidden');
+            
+            // إظهار المحتوى الرئيسي
+            mainContent.classList.add('visible');
+
+            // إزالة Splash Screen من DOM بعد انتهاء الحركة لضمان التنظيف
+            setTimeout(() => {
+                splashScreen.style.display = 'none';
+            }, 1000); // 1000 مللي ثانية هي مدة الانتقال (transition) في CSS
+        }, DURATION);
+    });
+
+    // --------------------------------------------------------
+    // 3. (مرحلة لاحقة) دالة للضغط على الصور/الخانة
+    // --------------------------------------------------------
+    // هذه الدالة ستستخدم لتطبيق الضغط على الصور التي طلبتها لاحقاً
+    /*
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.game-box')) {
+            const gameBox = e.target.closest('.game-box');
+            const gameId = gameBox.getAttribute('data-game-id');
+            // هنا يمكنك إضافة الكود الذي يفتح الرابط أو يقوم بعمل ما
+            console.log(`تم الضغط على خانة رقم: ${gameId}`);
+            // مثال: window.location.href = 'your_link_' + gameId;
+        }
+    });
+    */
+</script>
+</body>
+</html>
